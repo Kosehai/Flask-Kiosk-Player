@@ -30,6 +30,8 @@ Så lenge videoer som blir lagt til er av format MPEG eller h264 (.mp4) blir det
 
 Alt av web gui ligger i ./template mappen, kan gjøres noen endringer her på tekst osv om kunde vil ha det.
 
+**Titler på videoene blir hentet fra MetaData**. Så for å få inn riktig titel må du: Høgereklikk -> Properties -> Details -> Rediger tittel feltet
+
 ## Automatisk sync mot OneDrive/Dropbox/Gdrive
 Programet er veldig enkelt av design og har ingen API mot noen spesifik cloud løsning. Enkleste måten å få til dette på er bare en SymLink. Bare innstaler klient for skytjeneste og lag en symbolsk link med denne commanden (må tilpasse path osv):
 
