@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<style>
+    body{
+        background-image: url("static/hydro-aardal.jpg");
+        background-size: cover;
+    }
+    h1 {
+        text-align: center;
+        margin: 2.5%;
+        font-size: 55px;
+        color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+    }
+    .video-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: space-around;
+    margin:auto;
+}
+    .video {
+        width: 24.5%;
+        height: auto;
+        aspect-ratio: 16/9;
+        margin: 2px;
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    .title {
+        position: absolute;
+        bottom: 2px;
+        font-size: x-large;
+        width: 100%;
+        background: rgba(0,0,0,0.3);
+        text-align: center;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<html lang="en">
+    <head>
+        <title>Teknologiparken Media Player</title>
+    </head>
+    <h1>
+        Teknologiparken Video Arkiv
+    </h1>
+    <body>
+        <div class="video-container">
+        {%for m in media%}
+            <div class="video" onclick="location.href = '{{'/playvideo/' + m['filename']}}'">
+                <img src="{{url_for('getvideo', filepath='thumb/' + m['thumbnail'])}}"></img>
+                <div class="title">{{m["title"]}}</div>
+            </div>
+        {%endfor%}
+    </div>
+
+    </body>
+</html>
